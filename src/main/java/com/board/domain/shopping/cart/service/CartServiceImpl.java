@@ -73,8 +73,6 @@ public class CartServiceImpl implements CartService{
                         .orderCount(reqeustDTO.getOrderCount())
                         .build());
 
-        System.out.println(findCart.getTotalPrice());
-
         // 장바구니 총 금액 변경
         findCart.setTotalPrice(findCart.getTotalPrice() + (findProduct.getPrice() * reqeustDTO.getOrderCount()));
         findCart = cartRepository.save(findCart);
